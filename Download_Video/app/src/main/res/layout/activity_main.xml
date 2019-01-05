@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/rlPreView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+
+                android:id="@+id/ivVideoPreView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher_background" />
+
+            <ImageView
+                android:id="@+id/ivPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/btn_play" />
+
+            <com.example.downloadvideo.CircleProgressView
+                android:id="@+id/downloadProgress"
+                android:layout_width="@dimen/downloadProgress_width"
+                android:layout_height="@dimen/downloadProgress_height"
+                android:padding="@dimen/downloadProgress_padding"
+                android:progress="0"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                app:progressReachColor="@color/colorPrimary"
+                app:progressStyle="FillInnerArc"
+                app:progressTextColor="@color/colorAccent"
+                app:radius="@dimen/downloadProgress_radius" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <VideoView
+        android:id="@+id/vvVideoStram"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlPreView"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

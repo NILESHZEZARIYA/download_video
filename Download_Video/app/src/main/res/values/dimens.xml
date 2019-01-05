@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="downloadProgress_padding">10dp</dimen>
+    <dimen name="downloadProgress_radius">16dp</dimen>
+    <dimen name="raw_downloadProgress_height">50dp</dimen>
+    <dimen name="raw_downloadProgress_width">50dp</dimen>
+    <dimen name="downloadProgress_width">150dp</dimen>
+    <dimen name="downloadProgress_height">150dp</dimen>
+</resources>
