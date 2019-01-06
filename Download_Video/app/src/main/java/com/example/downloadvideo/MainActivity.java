@@ -18,6 +18,7 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -36,11 +37,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     VideoView vvVideoStram;
     MediaController mMediaController;
     ProgressDialog mProgressDialog;
-    String extension = ".3gp";
-    String videoUrl = "https://www.androidbegin.com/tutorial/AndroidCommercial.3gp";
+    String extension = ".mp4";
     String videoName = "video_1" + extension;
     String downloadedVideoPath;
     CircleProgressView mCircleProgressView;
+    String videoUrl = "https://firebasestorage.googleapis.com/v0/b/deadpool-wallpaper.appspot.com/o/Ek%20Ajnabee%20Haseena%20Se%20Mulakat%20Ho%20Gai%20Full%20Song%20--%20Best%20Ad%20Campaign%20Song%20by%20Doublemint%20--.mp4?alt=media&token=72d1fbd7-6444-4538-9671-ca766e66f465";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +75,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mProgressDialog = new ProgressDialog(MainActivity.this);
         mProgressDialog.setTitle("Buffering...");
 
-        Glide.with(getApplicationContext()).load(videoUrl).into(ivVideoPreView);
+        Glide.with(getApplicationContext()).load(videoUrl)
+                .thumbnail(0.5f)
+                .into(ivVideoPreView);
     }
 
     public void playVideo(String mVideoPath) {
